@@ -40,11 +40,13 @@ function Game() {
 
   //Handle player
   const handleClick = (i) => {
-    "Your code here";
+    //"Your code here";
+
+    setSquares(squares.map());
   };
 
   //Restart game
-  const handlRestart = () => {
+  const handleRestart = () => {
     "Your code here";
   };
 
@@ -55,7 +57,7 @@ function Game() {
         <span className="player">Next player is: {xIsNext ? "X" : "O"}</span>
         <Board squares={"Your code here"} handleClick={"Your code here"} />
       </div>
-      <button onClick={"Your code here"} className="restart-btn">
+      <button onClick={handleRestart} className="restart-btn">
         Restart
       </button>
     </div>
