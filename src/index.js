@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+// Test git
+// Test another git cm
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
