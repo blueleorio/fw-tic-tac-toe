@@ -9,7 +9,8 @@ function Game() {
   //Declaring a Winner
   useEffect(() => {
     // calculateWinner(squares);
-    setWinner(calculateWinner(squares));
+    const winner = calculateWinner(squares);
+    setWinner(winner);
   }, [squares]);
 
   //function to check if a player has won.
@@ -42,20 +43,21 @@ function Game() {
   //Handle player
   const handleClick = (i) => {
     //"Your code here";
-    if (xIsNext) {
-      squares.splice(i, 1, "X");
-      setSquares(squares);
-      setXIsNext(false);
-    } else {
-      squares.splice(i, 1, "O");
-      setSquares(squares);
-      setXIsNext(true);
+    const square = squares.slice();
+
+    if (!winner) {
+      square[i] = xIsNext ? "X" : "O";
+      setSquares(square);
     }
+    setXIsNext((prevState) => !prevState);
   };
 
   //Restart game
   const handleRestart = () => {
-    "Your code here";
+    // "Your code here";
+    setSquares(Array(9).fill(null));
+    setXIsNext(true);
+    setWinner(null);
   };
 
   return (
