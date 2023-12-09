@@ -45,11 +45,11 @@ function Game() {
     //"Your code here";
     const square = squares.slice();
 
-    if (!winner) {
+    if (!winner && !square[i]) {
       square[i] = xIsNext ? "X" : "O";
       setSquares(square);
+      setXIsNext((prevState) => !prevState);
     }
-    setXIsNext((prevState) => !prevState);
   };
 
   //Restart game
